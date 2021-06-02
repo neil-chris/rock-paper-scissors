@@ -1,0 +1,16 @@
+.button {
+    display: block;
+    margin: auto;
+}
+.bottom-div {
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+}
+.text {
+    margin-right: 1rem;
+}
+.title-text {
+    margin-right: 1rem;
+    color: #0c63e4;
+}
