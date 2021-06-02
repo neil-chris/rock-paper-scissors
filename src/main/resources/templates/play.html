@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Play</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+    <form th:object="${player}" method="post">
+        <img th:src="@{/images/retro-offset-rock-paper-scissors-icons.png}" style="width:1400px;height:412px"/>
+        <div class="bottom-div" >
+            <h1 class="title-text">Pick one and click play</h1>
+            <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" th:field="*{choice}"  th:value="${T(sheridan.chrisnei.rockpaperscissors.domain.Choice).ROCK.name()}">
+            <label class="form-check-label text" for="inlineRadio1">Rock</label>
+            <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" th:field="*{choice}" th:value="${T(sheridan.chrisnei.rockpaperscissors.domain.Choice).PAPER.name()}">
+            <label class="form-check-label text" for="inlineRadio2">Paper</label>
+            <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio3" th:field="*{choice}" th:value="${T(sheridan.chrisnei.rockpaperscissors.domain.Choice).SCISSORS.name()}">
+            <label class="for-check-label text" for="inlineRadio3">Scissors</label>
+            <br>
+            <br>
+            <button type="submit" class="button btn btn-primary" >Play</button>
+        </div>
+        <input type ="hidden" id="type" th:field="*{type}" th:value="${T(sheridan.chrisnei.rockpaperscissors.domain.Player.Type).HUMAN.name()}">
+    </form>
+
+</body>
+</html>

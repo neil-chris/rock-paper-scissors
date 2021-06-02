@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="bottom-div">
+    <h1 th:utext="'You chose a ' + ${results.players.get(0).choice.toString()} + '.'" class="title-text"></h1>
+    <h1 th:utext="'The computer chose a ' + ${results.players.get(1).choice.toString()} + '.'" class="title-text"></h1>
+    <div th:if="${results.winner != null}">
+        <h1 th:if="${results.winner.toString().equalsIgnoreCase('Human')} " th:utext="'The winner is you.'" class="title-text"></h1>
+        <h1 th:unless="${results.winner.toString().equalsIgnoreCase('Human')}" th:utext="'The winner is the ' + ${results.winner.type.toString()} + '.'" class="title-text"></h1>
+    </div>
+    <div th:unless="${results.winner != null}">
+        <h1 th:utext="'Its a draw game!'" class="title-text"></h1>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a th:href="@{/rockpaperscissors}">Play Again</a>
+    </div>
+</div>
+
+
+</body>
+</html>
